@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V & P — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: #1a1612;
+      overflow: hidden;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      background-image: url('assets/save_the_date.jpeg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.72);
+      z-index: 0;
+    }
+
+    .logo {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      right: auto;
+      bottom: auto;
+      width: min(148px, 24vw);
+      height: auto;
+      display: block;
+      margin: 0;
+      transform: none;
+      filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.24));
+      z-index: 2;
+    }
+
+    .overlay {
+      position: fixed;
+      left: 50%;
+      bottom: clamp(20px, 5vh, 48px);
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: min(92vw, 820px);
+      padding: 0 20px;
+    }
+
+    .tagline {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.7rem, 8.1vw, 5.4rem);
+      color: #f5f0e8;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <img class="logo" src="assets/logo.png" alt="V & P monogram" />
+  <div class="overlay">
+    <p class="tagline">06/26/27</p>
+    <p class="tagline">Something beautiful<br>is coming soon!</p>
+  </div>
+</body>
+</html>
