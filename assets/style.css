@@ -20,7 +20,7 @@ html, body {
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  background: #120d08;
+  background: #434B4D;
   color: #f5f0e8;
 }
 
@@ -83,31 +83,31 @@ a {
   justify-content: center;
   gap: clamp(1.4rem, 4vw, 3rem);
   padding: 18px 20px;
-  background: rgba(15, 11, 7, 0.94);
+  background: rgba(85, 95, 98, 0.92);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(227, 181, 99, 0.25);
+  border-bottom: 1px solid rgba(240, 185, 61, 0.4);
 }
 
 .site-nav a {
   text-decoration: none;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
-  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  font-size: clamp(0.81rem, 1.36vw, 0.98rem);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #f5f0e8;
+  color: #F5F1E8;
   padding-bottom: 4px;
   border-bottom: 1px solid transparent;
   transition: color 0.25s ease, border-color 0.25s ease;
 }
 
 .site-nav a:hover {
-  color: #f5f0e8;
+  color: #F5F1E8;
 }
 
 .site-nav a.active {
-  color: #f5f0e8;
-  border-bottom-color: #e3b563;
+  color: #F5F1E8;
+  border-bottom-color: #f0b93d;
 }
 
 /* ---------- Page shell ---------- */
@@ -122,7 +122,7 @@ a {
 
 .page-header {
   text-align: center;
-  margin-bottom: clamp(36px, 6vw, 64px);
+  margin-bottom: clamp(18px, 3vw, 32px);
 }
 
 .page-header .script {
@@ -146,7 +146,7 @@ a {
   display: flex;
   justify-content: center;
   gap: clamp(14px, 4vw, 36px);
-  margin: 0 auto clamp(40px, 7vw, 72px);
+  margin: 0 auto clamp(18px, 3vw, 32px);
   flex-wrap: wrap;
 }
 
@@ -158,7 +158,7 @@ a {
 .countdown .num {
   font-size: clamp(1.8rem, 5vw, 2.6rem);
   font-weight: 500;
-  color: #e3b563;
+  color: #D2AD4C;
   line-height: 1;
 }
 
@@ -177,13 +177,13 @@ a {
   font-size: clamp(1.1rem, 2.4vw, 1.4rem);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #e3b563;
+  color: #D2AD4C;
   margin-bottom: clamp(28px, 5vw, 48px);
 }
 
 .event {
   position: relative;
-  border-top: 1px solid rgba(227, 181, 99, 0.25);
+  border-top: 1px solid rgba(240, 185, 61, 0.25);
   padding: clamp(24px, 4vw, 36px) 0;
   padding-left: 30px;
 }
@@ -194,7 +194,7 @@ a {
 }
 
 .event:last-child {
-  border-bottom: 1px solid rgba(227, 181, 99, 0.25);
+  border-bottom: 1px solid rgba(240, 185, 61, 0.25);
 }
 
 .event-time {
@@ -219,15 +219,15 @@ a {
 }
 
 .event-address {
-  color: #d8c9ab;
+  color: #e4ddd0;
   font-size: 1.08rem;
   margin-bottom: 10px;
 }
 
 .event-address a {
-  color: #e3b563;
+  color: #F5F1E8;
   text-decoration: underline;
-  text-decoration-color: rgba(227, 181, 99, 0.4);
+  text-decoration-color: rgba(240, 185, 61, 0.4);
 }
 
 .event-desc {
@@ -252,7 +252,7 @@ a {
 
 .intro-text {
   text-align: center;
-  color: #d8c9ab;
+  color: #e4ddd0;
   font-size: 1.15rem;
   line-height: 1.6;
   max-width: 640px;
@@ -268,12 +268,12 @@ a {
 
 .airport-list li {
   padding: 18px 0;
-  border-top: 1px solid rgba(227, 181, 99, 0.2);
+  border-top: 1px solid rgba(240, 185, 61, 0.2);
   font-size: 1.15rem;
 }
 
 .airport-list li:last-child {
-  border-bottom: 1px solid rgba(227, 181, 99, 0.2);
+  border-bottom: 1px solid rgba(240, 185, 61, 0.2);
 }
 
 .airport-list .airport-name {
@@ -282,7 +282,7 @@ a {
 }
 
 .airport-list .airport-loc {
-  color: #b8a583;
+  color: #e4ddd0;
   font-size: 1.15rem;
   margin-top: 2px;
 }
@@ -309,8 +309,8 @@ a {
 
 .hotel-card {
   position: relative;
-  background: rgba(227, 181, 99, 0.06);
-  border: 1px solid rgba(227, 181, 99, 0.22);
+  background: rgba(240, 185, 61, 0.06);
+  border: 1px solid rgba(240, 185, 61, 0.22);
   border-radius: 4px;
   padding: 26px 28px;
   display: flex;
@@ -329,20 +329,20 @@ a {
 }
 
 .hotel-address a {
-  color: #b8a583;
+  color: #F5F1E8;
   font-size: 1.15rem;
   text-decoration: underline;
-  text-decoration-color: rgba(227, 181, 99, 0.35);
+  text-decoration-color: rgba(240, 185, 61, 0.35);
   transition: color 0.2s ease;
 }
 
 .hotel-address a:hover {
-  color: #e3b563;
+  color: #F5F1E8;
 }
 
 .hotel-distance {
   font-size: 1.15rem;
-  color: #d8c9ab;
+  color: #e4ddd0;
   line-height: 1.5;
   margin-bottom: 14px;
   flex: 1;
@@ -353,15 +353,15 @@ a {
   font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #e3b563;
+  color: #F5F1E8;
   text-decoration: none;
-  border-bottom: 1px solid rgba(227, 181, 99, 0.5);
+  border-bottom: 1px solid rgba(240, 185, 61, 0.5);
   padding-bottom: 2px;
 }
 
 .hotel-link:hover {
-  color: #f5f0e8;
-  border-bottom-color: #f5f0e8;
+  color: #F5F1E8;
+  border-bottom-color: #F5F1E8;
 }
 
 /* ---------- Map ---------- */
@@ -375,7 +375,7 @@ a {
   aspect-ratio: 1 / 1;
   max-height: 82vh;
   border-radius: 4px;
-  border: 1px solid rgba(227, 181, 99, 0.3);
+  border: 1px solid rgba(240, 185, 61, 0.3);
   background: #241b10;
 }
 
@@ -388,7 +388,7 @@ a {
 
 .closing-text {
   text-align: center;
-  color: #d8c9ab;
+  color: #e4ddd0;
   font-size: 1.05rem;
   line-height: 1.6;
   max-width: 620px;
@@ -398,18 +398,18 @@ a {
 /* ---------- FAQ page ---------- */
 
 .faq-item {
-  border-top: 1px solid rgba(227, 181, 99, 0.25);
+  border-top: 1px solid rgba(240, 185, 61, 0.25);
   padding: clamp(22px, 4vw, 32px) 0;
 }
 
 .faq-item:last-child {
-  border-bottom: 1px solid rgba(227, 181, 99, 0.25);
+  border-bottom: 1px solid rgba(240, 185, 61, 0.25);
 }
 
 .faq-question {
   font-weight: 800;
   font-size: 1.4rem;
-  color: #e3b563;
+  color: #D2AD4C;
   margin-bottom: 8px;
 }
 
@@ -420,9 +420,9 @@ a {
 }
 
 .faq-answer a {
-  color: #e3b563;
+  color: #F5F1E8;
   text-decoration: underline;
-  text-decoration-color: rgba(227, 181, 99, 0.4);
+  text-decoration-color: rgba(240, 185, 61, 0.4);
 }
 
 @media (max-width: 520px) {

@@ -19,7 +19,7 @@
       background: #2a2013;
     }
     .leaflet-popup-content b {
-      color: #e3b563;
+      color: #f0b93d;
     }
     /* Standard OSM tiles are light by default. There's no free, keyless dark
        tile provider left (CARTO now requires an API key), so we fake a dark
@@ -64,7 +64,7 @@
 
     <div class="leaf-divider" style="margin-bottom: 20px;"></div>
     <h2 class="section-heading">Airports</h2>
-    <p class="intro-text">For guests traveling to our wedding, there are two convenient airport options.</p>
+    <p class="intro-text">For guests traveling to our wedding, there are two nearby airports.</p>
     <ul class="airport-list">
       <li>
         <div class="airport-name">Boston Logan International Airport</div>
@@ -126,7 +126,7 @@
     <div class="map-wrap">
       <div id="venue-map"></div>
       <div class="map-legend">
-        <span><i style="width:16px;height:16px;background:#e3b563;border:2px solid #f5f0e8;"></i> Ceremony &amp; Reception</span>
+        <span><i style="width:16px;height:16px;background:#f0b93d;border:2px solid #f5f0e8;"></i> Ceremony &amp; Reception</span>
         <span><i style="width:11px;height:11px;background:#8fb8a8;"></i> Hotel</span>
         <span><i style="width:11px;height:11px;background:#8ca7c9;"></i> Airport</span>
       </div>
@@ -163,10 +163,10 @@
         maxZoom: 16
       }).addTo(map);
 
-      var typeColor = { Ceremony: '#e3b563', Reception: '#e3b563', Hotel: '#8fb8a8', Airport: '#8ca7c9' };
+      var typeColor = { Ceremony: '#f0b93d', Reception: '#f0b93d', Hotel: '#8fb8a8', Airport: '#8ca7c9' };
       var typeGlow = {
-        Ceremony: 'rgba(227,181,99,0.66)',
-        Reception: 'rgba(227,181,99,0.66)',
+        Ceremony: 'rgba(240,185,61,0.66)',
+        Reception: 'rgba(240,185,61,0.66)',
         Hotel: 'rgba(143,184,168,0.77)',
         Airport: 'rgba(140,167,201,0.77)'
       };
@@ -178,7 +178,7 @@
         var glowColor = typeGlow[type];
         var border = isKeyVenue ? '3px solid #f5f0e8' : '2px solid #f5f0e8';
         var glow = isKeyVenue
-          ? '0 0 0 4.4px rgba(227,181,99,0.275), 0 0 15.4px ' + glowColor
+          ? '0 0 0 4.4px rgba(240,185,61,0.275), 0 0 15.4px ' + glowColor
           : '0 0 0 2.2px ' + glowColor.replace('0.77', '0.33') + ', 0 0 8.8px ' + glowColor;
         return L.divIcon({
           className: 'wedding-marker',
