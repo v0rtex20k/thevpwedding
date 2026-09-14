@@ -38,7 +38,7 @@ body {
 
 /* Gold interlocking-hearts divider, used above sections on the Travel page. */
 .hearts-divider {
-  width: min(468px, 108vw);
+  width: min(468px, 90%);
   height: 70px;
   margin: clamp(28px, 5vw, 44px) auto clamp(7px, 1.5vw, 12px);
   background-image: url("gold-interlocking-hearts.svg");
