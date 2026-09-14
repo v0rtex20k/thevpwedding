@@ -3,25 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>V & P — Coming Soon</title>
+  <title>V & P&emsp;Coming Soon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* Page-specific overrides for the full-bleed photo hero.
+       (Reset, font-family, and base color come from assets/style.css.) */
     html, body {
       height: 100%;
-      width: 100%;
     }
 
     body {
-      font-family: 'Cormorant Garamond', serif;
-      background: #1a1612;
+      background: #120d08;
       overflow: hidden;
     }
 
@@ -72,14 +67,83 @@
       line-height: 1;
       letter-spacing: 0.01em;
     }
+
+    .overlay-panel {
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      background: rgba(10, 8, 6, 0.16);
+      border-radius: 10px;
+      padding: clamp(6px, 3vw, 18px) clamp(10px, 4vw, 26px);
+    }
+
+    .welcome-note {
+      margin-top: 5px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 2.4vw, 1.3rem);
+      color: #f5f0e8;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+      line-height: 1.5;
+      max-width: 620px;
+    }
+
+    .welcome-note strong {
+      font-weight: 700;
+      font-size: 1.1em;
+      color: #e3b563;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      gap: clamp(1.4rem, 4vw, 3rem);
+      padding: 18px 20px;
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0));
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f5f0e8;
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+      transition: color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .site-nav a:hover {
+      color: #f5f0e8;
+      border-bottom-color: #e3b563;
+    }
+
+    .site-nav a.active {
+      color: #f5f0e8;
+      border-bottom-color: #e3b563;
+    }
   </style>
 </head>
 <body>
   <div class="bg"></div>
+  <nav class="site-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="event.html">Event</a>
+    <a href="travel.html">Travel</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
   <img class="logo" src="assets/logo.png" alt="V & P monogram" />
   <div class="overlay">
-    <p class="tagline">06/26/27</p>
-    <p class="tagline">Something beautiful<br>is coming soon!</p>
+    <div class="overlay-panel">
+      <p class="welcome-note">Thank you for being part of our lives and for sharing this incredibly special day with us. We are so grateful to have you join us as we begin our next chapter together. We cannot wait to see you on  <strong>Saturday, June 26, 2027</strong>!</p>
+    </div>
   </div>
 </body>
 </html>
