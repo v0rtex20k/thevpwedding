@@ -127,7 +127,8 @@
       <div id="venue-map"></div>
       <div class="map-legend">
         <span><i style="width:16px;height:16px;background:#f0b93d;border:2px solid #f5f0e8;"></i> Ceremony &amp; Reception</span>
-        <span><i style="width:11px;height:11px;background:#8fb8a8;"></i> Hotel</span>
+        <span><i style="width:18px;height:18px;background:#c98ab0;border:2px solid #f5f0e8;"></i> Welcome Soirée</span>
+        <span><i style="width:10px;height:10px;background:#8fb8a8;"></i> Hotel</span>
         <span><i style="width:11px;height:11px;background:#8ca7c9;"></i> Airport</span>
       </div>
       <p class="map-note">Locations are approximate. Tap a pin for details.</p>
@@ -142,6 +143,7 @@
       var locations = [
         { name: 'Sts. Constantine &amp; Helen', full: 'Sts. Constantine and Helen Greek Orthodox Church', type: 'Ceremony', lat: 42.6739845, lon: -71.1822815 },
         { name: 'LaBelle Winery', full: 'LaBelle Winery', type: 'Reception', lat: 42.9017046, lon: -71.5757178 },
+        { name: 'Tavern In The Square', full: 'Tavern In The Square (Top Floor) — The Welcome Soirée', type: 'Special', lat: 42.7709200, lon: -71.2248900 },
         { name: 'DoubleTree', full: 'DoubleTree by Hilton Hotel Boston-Andover', type: 'Hotel', lat: 42.6964607, lon: -71.2073910 },
         { name: 'Artisan Hotel', full: 'The Artisan Hotel at Tuscan Village', type: 'Hotel', lat: 42.7711591, lon: -71.2253310 },
         { name: 'Bedford Village Inn', full: 'The Grand at the Bedford Village Inn', type: 'Hotel', lat: 42.9560611, lon: -71.5093918 },
@@ -163,23 +165,27 @@
         maxZoom: 16
       }).addTo(map);
 
-      var typeColor = { Ceremony: '#f0b93d', Reception: '#f0b93d', Hotel: '#8fb8a8', Airport: '#8ca7c9' };
+      var typeColor = { Ceremony: '#f0b93d', Reception: '#f0b93d', Special: '#c98ab0', Hotel: '#8fb8a8', Airport: '#8ca7c9' };
       var typeGlow = {
         Ceremony: 'rgba(240,185,61,0.66)',
         Reception: 'rgba(240,185,61,0.66)',
+        Special: 'rgba(201,138,176,0.77)',
         Hotel: 'rgba(143,184,168,0.77)',
         Airport: 'rgba(140,167,201,0.77)'
       };
 
       function makeIcon(type) {
         var isKeyVenue = type === 'Ceremony' || type === 'Reception';
-        var size = isKeyVenue ? 29 : 15;
+        var isSpecial = type === 'Special';
+        var size = isKeyVenue ? 29 : (isSpecial ? 22 : 13.5);
         var color = typeColor[type];
         var glowColor = typeGlow[type];
-        var border = isKeyVenue ? '3px solid #f5f0e8' : '2px solid #f5f0e8';
+        var border = isKeyVenue ? '3px solid #f5f0e8' : (isSpecial ? '2.5px solid #f5f0e8' : '2px solid #f5f0e8');
         var glow = isKeyVenue
           ? '0 0 0 4.4px rgba(240,185,61,0.275), 0 0 15.4px ' + glowColor
-          : '0 0 0 2.2px ' + glowColor.replace('0.77', '0.33') + ', 0 0 8.8px ' + glowColor;
+          : isSpecial
+            ? '0 0 0 3.3px rgba(201,138,176,0.33), 0 0 11px ' + glowColor
+            : '0 0 0 2.2px ' + glowColor.replace('0.77', '0.33') + ', 0 0 8.8px ' + glowColor;
         return L.divIcon({
           className: 'wedding-marker',
           html: '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + color + ';border:' + border + ';box-shadow:' + glow + ';"></div>',
@@ -194,7 +200,7 @@
         var isKeyVenue = loc.type === 'Ceremony' || loc.type === 'Reception';
         var marker = L.marker([loc.lat, loc.lon], {
           icon: makeIcon(loc.type),
-          zIndexOffset: isKeyVenue ? 1000 : 0
+          zIndexOffset: isKeyVenue ? 1000 : (loc.type === 'Special' ? -100 : 0)
         }).addTo(map);
         marker.bindPopup('<b>' + loc.name + '</b><br><span style="opacity:.75">' + loc.type + '</span>' + (loc.full !== loc.name ? '<br>' + loc.full : ''));
         bounds.push([loc.lat, loc.lon]);

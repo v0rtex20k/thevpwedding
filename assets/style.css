@@ -419,6 +419,26 @@ a {
   line-height: 1.6;
 }
 
+.faq-sublabel {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #D2AD4C;
+  margin: 18px 0 2px;
+}
+
+.faq-sublabel:first-child {
+  margin-top: 0;
+}
+
+.faq-answer + .faq-sublabel {
+  padding-top: 10px;
+  border-top: 1px dashed rgba(240, 185, 61, 0.2);
+}
+
 .faq-answer a {
   color: #F5F1E8;
   text-decoration: underline;
